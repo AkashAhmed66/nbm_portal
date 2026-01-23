@@ -15,7 +15,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.tiny.cloud/1/fqzsl2c8bizifejrzzjk9rznnaofxdzvhl52obkbztc0cks0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
-
         <script>
             tinymce.init({
               selector: 'textarea.tinymce-editor',
@@ -30,28 +29,7 @@
               ],
               ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
             });
-          </script>
-        {{-- <script type="text/javascript">
-            tinymce.init({
-                selector: 'textarea.tinymce-editor',
-                
-                menubar: false,
-                plugins: [
-                    'advlist autolink lists link image charmap print preview anchor',
-                    'searchreplace visualblocks code fullscreen',
-                    'insertdatetime media table paste code help wordcount', 'image'
-                ],
-                toolbar: 'undo redo | formatselect | ' +
-                    'bold italic backcolor | alignleft aligncenter ' +
-                    'alignright alignjustify | bullist numlist outdent indent | ' +
-                    'removeformat | help',
-                content_css: '//www.tiny.cloud/css/codepen.min.css',
-                init_instance_callback : function(editor) {
-                    var freeTiny = document.querySelector('.tox .tox-notification--in');
-                    freeTiny.style.display = 'none';
-                }
-            });
-        </script> --}}
+        </script>
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -62,26 +40,39 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+        <div class="min-h-screen bg-gray-100 flex flex-col justify-between">
+            <div>
+                @livewire('navigation-menu')
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
+                <!-- Page Heading -->
+                @if (isset($header))
+                    <header class="bg-white shadow">
+                        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                            {{ $header }}
+                        </div>
+                    </header>
+                @endif
+
+                <!-- Page Content -->
+                <main>
+                    {{ $slot }}
+                </main>
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-white py-4 px-6">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+                    <div class="mb-2 md:mb-0">
+                        NBM Internationl Limited © <script>document.write(new Date().getFullYear())</script>
                     </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+                    <div>
+                        Developed by <strong>SourceExpert</strong>
+                    </div>
+                </div>
+            </footer>
         </div>
 
         @stack('modals')
-
         @livewireScripts
     </body>
 </html>
