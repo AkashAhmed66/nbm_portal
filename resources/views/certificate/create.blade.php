@@ -54,8 +54,9 @@
                             </div>
 
                             <div class="mt-4">
-                                <label class="block text-sm text-black-700" for="title">Certificate</label>
-                                <input required type="file" name="certificate" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Short Desc">
+                                <label class="block text-sm font-bold text-gray-700" for="certificate">Certificate (PDF only)</label>
+                                <input required type="file" name="certificate" accept=".pdf" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                <p class="mt-1 text-sm text-gray-500">Maximum file size: 10MB</p>
                             </div>
 
                             <div class="flex items-center justify-start mt-4 gap-x-2">
