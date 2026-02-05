@@ -46,7 +46,7 @@
                                 <input type="file" name="thumb" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Short Desc">
 
                                 <div class="max-w-sm rounded overflow-hidden shadow-lg mt-4">
-                                    <img class="w-full" src="{{ asset('public/'.$news->thumb) }}" alt="Sunset in the mountains">
+                                    <img class="w-full" src="{{ asset($news->thumb) }}" alt="Sunset in the mountains">
                                 </div>
                             </div>
 
