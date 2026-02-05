@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Report extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
         'report_category_id',
+        'title',
+        'link',
+        'thumb',
     ];
     public function reportCategory(){
         return $this->belongsTo(ReportCategory::class);

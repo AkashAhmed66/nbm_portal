@@ -33,7 +33,7 @@
                                 <td class="px-6 whitespace-no-wrap border-b border-gray-200">{{ ++$i }}</td>
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $item->reportCategory->title }}</td>
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $item->title }}</td>
-                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ Str::limit($item->link, 100)."..." }}</td>
+                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ Str::limit($item->link, 20)."..." }}</td>
                                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                     <form action="{{ route('report.destroy',$item->id) }}" method="POST">
 

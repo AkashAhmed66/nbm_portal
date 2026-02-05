@@ -24,10 +24,10 @@ class StoreReportRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'report_category_id' => 'required',
-            'thumb' => 'required',
-            'link' => 'required',
+            'title' => 'required|string|max:255',
+            'report_category_id' => 'required|exists:report_categories,id',
+            'thumb' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'link' => 'required|url',
         ];
     }
 }

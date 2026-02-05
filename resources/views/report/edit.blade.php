@@ -34,8 +34,8 @@
 
                             <div class="mt-4">
                                 <label for="serviceCategories" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Category</label>
-                                <select id="serviceCategories" name="report_category_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected>Choose a Category</option>
+                                <select required id="serviceCategories" name="report_category_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option value="" disabled>Choose a Category</option>
 
                                     @foreach($reportCategory as $category)
                                         <option value="{{$category->id}}" {{ old('report_category_id', $report->report_category_id) == $category->id ? "selected" : "" }}>{{$category->title}}</option>
@@ -46,12 +46,12 @@
 
                             <div class="mt-4">
                                 <label class="block text-sm font-bold text-gray-700" for="title">Title</label>
-                                <input type="text" name="title" value="{{old('title', $report->title)}}" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Title">
+                                <input required type="text" name="title" value="{{old('title', $report->title)}}" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Title">
                             </div>
 
                             <div class="mt-4">
                                 <label class="block text-sm font-bold text-gray-700" for="title">Link</label>
-                                <input type="url" name="link" value="{{old('link', $report->link)}}" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Link">
+                                <input required type="url" name="link" value="{{old('link', $report->link)}}" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Link">
                             </div>
 
                             <div class="mt-4">
