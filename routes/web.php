@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceTypeController;
 use App\Http\Controllers\ServiceCategoryController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Route::middleware([
         'service-types' => ServiceTypeController::class,
         'service-categories' => ServiceCategoryController::class,
         'services' => ServiceController::class,
+        'projects' => ProjectController::class,
         'certificate' => CertificateController::class,
         'report-categories' => ReportCategoryController::class,
         'report' => ReportController::class,
@@ -47,6 +49,9 @@ Route::middleware([
 Route::get('/api/services', [ServiceController::class, 'serviceList'])->name('api.services');
 Route::get('/api/service-details/{id}', [ServiceController::class, 'serviceDetails'])->name('api.service-details');
 Route::get('/api/category-wise-service/{id}', [ServiceController::class, 'categoryWiseService'])->name('api.category-wise-service');
+Route::get('/api/projects', [ProjectController::class, 'projectList'])->name('api.projects');
+Route::get('/api/project-details/{id}', [ProjectController::class, 'projectDetails'])->name('api.project-details');
+Route::get('/api/category-wise-project/{id}', [ProjectController::class, 'categoryWiseProject'])->name('api.category-wise-project');
 Route::get('/api/news', [NewsController::class, 'allNews'])->name('api.news');
 Route::get('/api/report-categories', [ReportCategoryController::class, 'allReportCategories'])->name('api.reportCategories');
 
